@@ -1,10 +1,17 @@
 package tn.esprit.sprint.foyer_attia_imed.Entites;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
+@FieldDefaults(level = AccessLevel.PUBLIC)
+@Entity
+@Table
 public class Foyer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
