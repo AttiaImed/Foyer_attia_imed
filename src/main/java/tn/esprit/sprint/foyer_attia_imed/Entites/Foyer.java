@@ -9,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-@FieldDefaults(level = AccessLevel.PUBLIC)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table
 public class Foyer {

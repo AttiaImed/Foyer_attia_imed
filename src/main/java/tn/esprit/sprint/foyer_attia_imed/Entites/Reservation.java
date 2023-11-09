@@ -12,7 +12,7 @@ import java.util.Date;
 @Table(name = "Reservation")
 @Entity
 @Data
-@FieldDefaults(level = AccessLevel.PUBLIC)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Reservation {
     @Id
     private String idReservation;

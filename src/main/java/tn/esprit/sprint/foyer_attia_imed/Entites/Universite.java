@@ -8,7 +8,7 @@ import lombok.experimental.FieldDefaults;
 @Table(name = "Universite")
 @Entity
 @Data
-@FieldDefaults(level = AccessLevel.PUBLIC)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Universite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
