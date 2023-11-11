@@ -12,10 +12,10 @@ import lombok.experimental.FieldDefaults;
 public class Universite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idUniversite;
+    long idUniversite;
     @Column(name = "nomUniversite")
-    private String nom;
+    String nom;
     @Column(name = "adresse")
-    private String adresse;
+    String adresse;
 
 }

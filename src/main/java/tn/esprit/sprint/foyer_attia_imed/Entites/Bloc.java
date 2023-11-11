@@ -15,9 +15,9 @@ import lombok.experimental.FieldDefaults;
 public class Bloc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idBlock;
+    long idBlock;
     @Column(name = "nomBlock")
-    private String nom;
+    String nom;
     @Column(name = "capaticeBloc")
-    private long capacite;
+    long capacite;
 }

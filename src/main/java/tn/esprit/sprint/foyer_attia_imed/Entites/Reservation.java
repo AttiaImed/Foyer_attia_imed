@@ -15,11 +15,11 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Reservation {
     @Id
-    private String idReservation;
+    String idReservation;
 
     @Column(name = "anneeUniversitaire")
-    private Date annee;
+    Date annee;
 
     @Column(name = "estValide")
-    private boolean estValide;
+    boolean estValide;
 }

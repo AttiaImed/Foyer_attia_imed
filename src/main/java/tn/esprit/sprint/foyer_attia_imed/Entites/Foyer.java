@@ -15,11 +15,11 @@ import lombok.experimental.FieldDefaults;
 public class Foyer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idFoyer;
+    long idFoyer;
 
     @Column(name = "nomFoyer")
-    private String nom;
+    String nom;
 
     @Column(name = "capaciteFoyer")
-    private long capacite;
+    long capacite;
 }

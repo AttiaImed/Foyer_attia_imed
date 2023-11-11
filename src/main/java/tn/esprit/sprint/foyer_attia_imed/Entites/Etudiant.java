@@ -17,16 +17,16 @@ import java.time.LocalDate;
 public class Etudiant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
     @Column(name = "nom")
-    private String nom;
+    String nom;
     @Column(name = "prenom")
-    private String prenom;
+    String prenom;
     @Column(name = "cin")
-    private long cin;
+    long cin;
     @Column(name = "ecole")
-    private String ecole;
+    String ecole;
     @Column(name = "date_naissance")
-    private LocalDate date_naissance;
+    LocalDate date_naissance;
 
 }

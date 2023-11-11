@@ -15,9 +15,9 @@ import lombok.experimental.FieldDefaults;
 public class Chambre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idChambre;
+    long idChambre;
     @Column(name = "numeroChambre")
-    private long numeroChambre;
+    long numeroChambre;
     @Enumerated(EnumType.STRING)
-    private typeChambre typec;
+    typeChambre typec;
 }
