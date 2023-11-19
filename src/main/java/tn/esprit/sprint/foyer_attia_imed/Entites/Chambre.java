@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Set;
+
 @Table(name = "Chambre")
 @Entity
 @Getter
@@ -20,4 +22,11 @@ public class Chambre {
     long numeroChambre;
     @Enumerated(EnumType.STRING)
     typeChambre typec;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    Set<Reservation> reservations;
+
+    @ManyToOne
+    Bloc bloc;
+
 }

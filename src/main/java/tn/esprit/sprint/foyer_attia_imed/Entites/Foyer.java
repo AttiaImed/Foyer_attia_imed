@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,4 +24,10 @@ public class Foyer {
 
     @Column(name = "capaciteFoyer")
     long capacite;
+
+    @OneToOne(mappedBy="foyer")
+    Universite universite;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="foyer")
+    Set<Bloc> blocs;
 }

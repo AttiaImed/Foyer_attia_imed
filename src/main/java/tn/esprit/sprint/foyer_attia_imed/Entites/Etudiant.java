@@ -5,12 +5,15 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Table(name = "Etudiant")
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @ToString
 @EqualsAndHashCode
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -28,5 +31,9 @@ public class Etudiant {
     String ecole;
     @Column(name = "date_naissance")
     LocalDate date_naissance;
+
+
+    @ManyToMany(mappedBy="etudiants", cascade = CascadeType.ALL)
+    private Set<Reservation> reservations;
 
 }

@@ -18,4 +18,7 @@ public class Universite {
     @Column(name = "adresse")
     String adresse;
 
+    @OneToOne
+    Foyer foyer;
+
 }
