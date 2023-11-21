@@ -8,6 +8,6 @@ import tn.esprit.sprint.foyer_attia_imed.Entites.Etudiant;
 import java.util.List;
 
 @Repository
-public interface EtudiantRepository extends CrudRepository<Etudiant,Long> {
+public interface EtudiantRepository extends JpaRepository<Etudiant,Long> {
     List<Etudiant> findAll();
 }
