@@ -1,7 +1,6 @@
 package tn.esprit.sprint.foyer_attia_imed.Services.Impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.sprint.foyer_attia_imed.Entites.Etudiant;
 import tn.esprit.sprint.foyer_attia_imed.Repositroy.EtudiantRepository;
@@ -10,9 +9,9 @@ import tn.esprit.sprint.foyer_attia_imed.Services.EtudiantService;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class EdutiantServiceImpl implements EtudiantService {
 
-    @Autowired
     EtudiantRepository etudiantRepository;
 
     @Override
