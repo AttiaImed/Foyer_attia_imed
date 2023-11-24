@@ -1,6 +1,7 @@
 package tn.esprit.sprint.foyer_attia_imed.Services.Impl;
 
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import tn.esprit.sprint.foyer_attia_imed.Entites.Etudiant;
 import tn.esprit.sprint.foyer_attia_imed.Repositroy.EtudiantRepository;
@@ -8,7 +9,8 @@ import tn.esprit.sprint.foyer_attia_imed.Services.EtudiantService;
 
 import java.util.List;
 
-@Service
+@Primary
+@Service("EdutiantServiceImpl")
 @AllArgsConstructor
 public class EdutiantServiceImpl implements EtudiantService {
 
