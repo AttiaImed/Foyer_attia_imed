@@ -18,25 +18,25 @@ public class EtudiantController {
     @Autowired
     EtudiantService etudiantService;
 
-    @GetMapping("/get")
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Etudiant>> getAllEtudiant(){
         List<Etudiant> e = etudiantService.getAllEtudiants();
         return new  ResponseEntity<List<Etudiant>>(e,HttpStatus.OK);
     }
 
-    @PostMapping(path = "/post",consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Etudiant> ajouterEtudiant(@RequestBody Etudiant e){
         Etudiant etudiantAjouter = etudiantService.addEtudiant(e);
         return new ResponseEntity<Etudiant>(etudiantAjouter,HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity deleteEtudiant(@PathVariable long id){
         etudiantService.removeEtudiant(id);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping(path = "/put/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces =  MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces =  MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Etudiant> modiferEudiant(@RequestBody Etudiant e,@PathVariable long id){
         Etudiant etudiant = etudiantService.modifyEtudiant(e,id);
         return new ResponseEntity<Etudiant>(etudiant,HttpStatus.ACCEPTED);

@@ -37,6 +37,7 @@ public class EdutiantServiceImpl implements EtudiantService {
         eModify.setNom(e.getNom());
         eModify.setPrenom(e.getPrenom());
         eModify.setCin(e.getCin());
+        eModify.setEcole(e.getEcole());
         return etudiantRepository.save(eModify);
     }
 

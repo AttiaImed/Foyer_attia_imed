@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import tn.esprit.sprint.foyer_attia_imed.Entites.Universite;
 import tn.esprit.sprint.foyer_attia_imed.Repositroy.UniversiteRepository;
+import tn.esprit.sprint.foyer_attia_imed.Services.FoyerService;
 import tn.esprit.sprint.foyer_attia_imed.Services.UniversiteService;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UniversiteServiceImpl implements UniversiteService {
     UniversiteRepository universiteRepository;
+    FoyerService foyerService;
 
     @Override
     public List<Universite> getAllUniversites() {
@@ -23,6 +25,9 @@ public class UniversiteServiceImpl implements UniversiteService {
 
     @Override
     public Universite addUniversite(Universite e) {
+        if(e.getFoyer() != null){
+            foyerService.addFoyer(e.getFoyer());
+        }
         return universiteRepository.save(e);
     }
 
