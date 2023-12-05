@@ -1,5 +1,6 @@
 package tn.esprit.sprint.foyer_attia_imed.Entites;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -26,6 +27,7 @@ public class Chambre {
     @OneToMany(cascade = CascadeType.ALL)
     Set<Reservation> reservations;
 
+    @JsonIgnoreProperties("bloc")
     @ManyToOne
     Bloc bloc;
 

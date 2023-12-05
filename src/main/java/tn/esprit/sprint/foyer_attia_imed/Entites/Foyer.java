@@ -1,5 +1,6 @@
 package tn.esprit.sprint.foyer_attia_imed.Entites;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -25,6 +26,7 @@ public class Foyer {
     @Column(name = "capaciteFoyer")
     long capacite;
 
+    @JsonIgnoreProperties("foyer")
     @OneToOne(mappedBy="foyer")
     Universite universite;
 
