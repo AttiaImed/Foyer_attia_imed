@@ -11,4 +11,14 @@ public interface FoyerRepository extends JpaRepository<Foyer,Long> {
     List<Foyer> findByCapaciteLessThan(int capacite);
     List<Foyer> findByCapaciteBetween(int min,int max);
     Foyer findByUniversiteNom(String nom);
+
+//    1- Recherche des foyers d'un bloc spécifique
+//            2- Recherche du foyer par son idFoyer pour un bloc donné
+//3- Recherche des foyers d'un bloc ayant une capacité spécifique
+//            4- Recherche du foyer d'un bloc spécifique dans une université
+
+    List<Foyer> findByBlocsNom(String nom);
+    Foyer findByBlocsIdBlocAndIdFoyer(long idBloc,long idFoyer);
+    List<Foyer> findByBlocsCapacite(int capacite);
+    Foyer findByBlocsNomAndBlocsUniversiteNom(String nom,String nomUniversite);
 }
