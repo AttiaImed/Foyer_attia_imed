@@ -6,7 +6,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Set;
-
 @Table(name = "Chambre")
 @Entity
 @Getter

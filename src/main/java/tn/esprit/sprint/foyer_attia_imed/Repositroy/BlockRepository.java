@@ -4,5 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import tn.esprit.sprint.foyer_attia_imed.Entites.Bloc;
 
 public interface BlockRepository  extends JpaRepository<Bloc,Long> {
-
+    Bloc findByNom(String nom);
+    Bloc findByNomLike(String nom);
+    Bloc findByNomContains(String nom);
+    Bloc findByNomContaining(String nom);
 }

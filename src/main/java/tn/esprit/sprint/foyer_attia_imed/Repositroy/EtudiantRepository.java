@@ -10,4 +10,8 @@ import java.util.List;
 @Repository
 public interface EtudiantRepository extends JpaRepository<Etudiant,Long> {
     List<Etudiant> findAll();
+    Etudiant findByCin(long cin);
+    Etudiant findByNomLike(String nom);
+    Etudiant findByNomContains(String nom);
+    Etudiant findByNomContaining(String nom);
 }
