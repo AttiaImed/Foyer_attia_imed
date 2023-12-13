@@ -30,7 +30,7 @@ public class Etudiant {
     @Column(name = "ecole")
     String ecole;
     @Column(name = "date_naissance")
-    LocalDate date_naissance;
+    LocalDate dateNaissance;
 
 
     @ManyToMany(mappedBy="etudiants", cascade = CascadeType.ALL)

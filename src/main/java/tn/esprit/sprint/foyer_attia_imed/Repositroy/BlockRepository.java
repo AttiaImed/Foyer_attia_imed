@@ -9,8 +9,6 @@ import java.util.List;
 public interface BlockRepository  extends JpaRepository<Bloc,Long> {
     Bloc findByNom(String nom);
 
-    List<Foyer> findByBlocsChambreTypec(String type);
-
 
 //2- Recherche par capaciteBloc
 //3- Recherche par nomBloc et capaciteBloc

@@ -18,7 +18,7 @@ public interface FoyerRepository extends JpaRepository<Foyer,Long> {
 //            4- Recherche du foyer d'un bloc spécifique dans une université
 
     List<Foyer> findByBlocsNom(String nom);
-    Foyer findByBlocsIdBlocAndIdFoyer(long idBloc,long idFoyer);
+    Foyer findByBlocsIdBlockAndIdFoyer(long idBloc,long idFoyer);
     List<Foyer> findByBlocsCapacite(int capacite);
-    Foyer findByBlocsNomAndBlocsUniversiteNom(String nom,String nomUniversite);
+    Foyer findByBlocsNomAndBlocsFoyerUniversiteNom(String nom,String nomUniversite);
 }

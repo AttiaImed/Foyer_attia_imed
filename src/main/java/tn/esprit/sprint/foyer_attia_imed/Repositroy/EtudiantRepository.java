@@ -5,6 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import tn.esprit.sprint.foyer_attia_imed.Entites.Etudiant;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -26,10 +28,16 @@ public interface EtudiantRepository extends JpaRepository<Etudiant,Long> {
 
     Etudiant findByNomAndPrenom(String nom,String prenom);
     Etudiant findByCinAndNom(long cin,String nom);
-    List<Etudiant> findByDateNaissanceAfter(String date);
-    List<Etudiant> findByEcoleNom(String nom);
+    List<Etudiant> findByDateNaissanceAfter(Date date);
+    List<Etudiant> findByEcole(String nom);
     Etudiant findByReservationsIdReservation(String idReservation);
-    List<Etudiant> findByReservationsAnnee(int annee);
-    List<Etudiant> findByEcoleNomAndDateNaissanceAfter(String nom,String date);
-    List<Etudiant> findByReservationsAnneeOrderByDateNaissance(int annee);
+    List<Etudiant> findByReservationsAnnee(Date annee);
+    List<Etudiant> findByEcoleAndDateNaissanceAfter(String nom, LocalDate date);
+    List<Etudiant> findByReservationsAnneeOrderByDateNaissance(Date annee);
+
+
+//    Afficher le nombre total des étudiants
+
+    long countBy();
+
 }
