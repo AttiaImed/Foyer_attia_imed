@@ -18,7 +18,7 @@ public class Universite {
     @Column(name = "adresse")
     String adresse;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     Foyer foyer;
 
 }

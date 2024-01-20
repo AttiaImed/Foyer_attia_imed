@@ -26,7 +26,6 @@ public class Chambre {
     @OneToMany(cascade = CascadeType.ALL)
     Set<Reservation> reservations;
 
-    @JsonIgnoreProperties("bloc")
     @ManyToOne
     Bloc bloc;
 

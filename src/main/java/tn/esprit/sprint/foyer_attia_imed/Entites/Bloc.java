@@ -24,7 +24,7 @@ public class Bloc {
     @Column(name = "capaticeBloc")
     long capacite;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="bloc")
+    @OneToMany(mappedBy="bloc")
     Set<Chambre> chambre;
 
     @JsonIgnoreProperties("foyer")
