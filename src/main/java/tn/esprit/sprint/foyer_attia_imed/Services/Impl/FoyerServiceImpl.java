@@ -40,9 +40,13 @@ public class FoyerServiceImpl implements FoyerService {
             foyerToModify.setCapacite(updatedFoyer.getCapacite());
 
             return foyerRepository.save(foyerToModify);
-        } else {
-            throw new EntityNotFoundException("Foyer with ID " + id + " not found");
         }
+        return null;
+    }
+
+    @Override
+    public Foyer getFoyerById(long id) {
+        return foyerRepository.findById(id).orElse(null);
     }
 
 }

@@ -9,4 +9,5 @@ public interface FoyerService {
     Foyer addFoyer(Foyer e);
     void removeFoyer(long id);
     Foyer modifyFoyer(Foyer e, long id);
+    Foyer getFoyerById(long id);
 }

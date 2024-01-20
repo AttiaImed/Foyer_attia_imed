@@ -1,6 +1,7 @@
 package tn.esprit.sprint.foyer_attia_imed.Repositroy;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import tn.esprit.sprint.foyer_attia_imed.Entites.Etudiant;
@@ -39,5 +40,13 @@ public interface EtudiantRepository extends JpaRepository<Etudiant,Long> {
 //    Afficher le nombre total des étudiants
 
     long countBy();
+
+    //recuperer la liste des etudiant qui ont des reservation est valide en sql
+    @Query(value = "select e from etudiant e" +
+                    "join reservation_etudiants re on e.id = re.etudiants_id" +
+                    "join reservation r on r.id_reservation = re.reservation_id_reservation " +
+                    "where r.est_valide = 1"
+            ,nativeQuery = true)
+    List<Etudiant> selectEtudiantByReservationValideSQL();
 
 }

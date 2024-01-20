@@ -6,7 +6,10 @@ import org.springframework.cglib.core.Block;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import tn.esprit.sprint.foyer_attia_imed.Entites.Bloc;
+import tn.esprit.sprint.foyer_attia_imed.Entites.Foyer;
 import tn.esprit.sprint.foyer_attia_imed.Repositroy.BlockRepository;
+import tn.esprit.sprint.foyer_attia_imed.Repositroy.FoyerRepository;
+import tn.esprit.sprint.foyer_attia_imed.Services.FoyerService;
 import tn.esprit.sprint.foyer_attia_imed.Services.IBlockService;
 
 import java.util.List;
@@ -16,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BlockServiceImpl implements IBlockService {
     BlockRepository blockRepository;
+    FoyerService foyerService;
 
     @Override
     public List<Bloc> getAllBlocks() {
@@ -23,8 +27,15 @@ public class BlockServiceImpl implements IBlockService {
     }
 
     @Override
-    public Bloc addBlock(Bloc e) {
-        return blockRepository.save(e);
+    public Bloc addBlock(Bloc block) {
+       Foyer foyer =  foyerService.getFoyerById(block.getFoyer().getIdFoyer());
+        if(foyer != null){
+            return  blockRepository.save(block);
+
+        }else if( foyer == null){
+            throw new EntityNotFoundException("Foyer with ID " + block.getFoyer().getIdFoyer() + " not found");
+        }
+        return null;
     }
 
     @Override
